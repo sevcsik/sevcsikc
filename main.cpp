@@ -153,7 +153,7 @@ int main(int argc, char **argv)
          org = parse(f, &mem);
       }
    } catch (exception &ex) {
-      cerr << ex.what();
+      cerr << ex.what() << endl;
       return -2;
    }
    cpu.run(org);
