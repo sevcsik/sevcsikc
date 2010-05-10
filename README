@@ -1,3 +1,5 @@
+sevcsikc interpreter
+
 Disclaimer
 
 sevcsikc is an interpreter for the sevcsik language, which is an extremely minimalistic, assembly-like language. It was created as a homework for the 'softlab2' course of Budapest University of Technology and Economics, and it's not intented for use in production environments. This product doesn't give you any guarantees, it can burn down your house or scare your cat, you have been warned.

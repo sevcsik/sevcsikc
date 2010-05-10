@@ -154,6 +154,7 @@ int main(int argc, char **argv)
       cerr << ex.what() << endl;
       return -2;
    }
+   
    cpu.run(org);
    cout << "Good bye, and thanks for all the fish" << endl;
    
