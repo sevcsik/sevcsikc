@@ -176,6 +176,8 @@ class Instruction
         * '*' means register, '@' means memory address
         */
       virtual void print() = 0;
+      /// empty destructor for Print to override
+      virtual ~Instruction() {}
 };
 
 /// Dummy instruction to hold data

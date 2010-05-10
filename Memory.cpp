@@ -1,6 +1,7 @@
 #include "Header.h"
 
 #include <cstdlib>
+#include <iostream>
 using namespace std;
 
 Memory::Memory(unsigned size) : pos(0), size(size)
