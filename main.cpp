@@ -6,8 +6,6 @@
 #include <sstream>
 using namespace std;
 
-#define START 0
-
 ParseEx::ParseEx(const char *msg, unsigned line) : msg(msg), line(line)
 {
 }
