@@ -207,7 +207,7 @@ Print::Print(unsigned arg, const char *format_) : arg(arg)
 
 Print::~Print()
 {
-   delete format;
+   delete[] format;
 }
 
 double Print::exec(double *acc)
