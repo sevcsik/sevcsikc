@@ -70,7 +70,7 @@ double Add::exec(double *acc)
 
 void Add::print()
 {
-   cout << "Add *" << arg1 << " *" << arg2 << endl;
+   cout << "Add *" << arg1 << " *" << arg2 << " to *" << dest << endl;
 }
 
 Subtract::Subtract(unsigned arg1, unsigned arg2, unsigned dest)
@@ -86,7 +86,7 @@ double Subtract::exec(double *acc)
 
 void Subtract::print()
 {
-   cout << "Subtract *" << arg1 << " *" << arg2 << endl;
+   cout << "Subtract *" << arg1 << " *" << arg2 << " to *" << dest << endl;
 }
 
 Multiply::Multiply(unsigned arg1, unsigned arg2, unsigned dest)
@@ -102,7 +102,7 @@ double Multiply::exec(double *acc)
 
 void Multiply::print()
 {
-   cout << "Multiply *" << arg1 << " *" << arg2 << endl;
+   cout << "Multiply *" << arg1 << " *" << arg2 << " to *" << dest << endl;
 }
 
 Divide::Divide(unsigned arg1, unsigned arg2, unsigned dest)
@@ -118,7 +118,24 @@ double Divide::exec(double *acc)
 
 void Divide::print()
 {
-   cout << "Divide *" << arg1 << " *" << arg2 << endl;
+   cout << "Divide *" << arg1 << " *" << arg2 << " to *" << dest << endl;
+}
+
+Compare::Compare(unsigned arg1, unsigned arg2, unsigned dest)
+   : arg1(arg1), arg2(arg2), dest(dest)
+{
+}
+
+double Compare::exec(double *acc)
+{
+   if (acc[arg1] < acc[arg2]) acc[dest] = -1;
+   else if (acc[arg1] == acc[arg2]) acc[dest] = 0;
+   else acc[dest] = 1;
+}
+
+void Compare::print()
+{
+   cout << "Compare *" << arg1 << " *" << arg2 << " to *" << dest << endl;
 }
 
 Put::Put(unsigned arg, unsigned addr): arg(arg), addr(addr)

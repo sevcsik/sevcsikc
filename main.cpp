@@ -97,6 +97,12 @@ unsigned parse(istream &in, Memory *mem)
          *mem << new Divide(i1, i2, i3);
          continue;
       }
+      if (token == "compare")
+      {
+         line >> i1 >> i2 >> i3;
+         *mem << new Compare(i1, i2, i3);
+         continue;
+      }
       if (token == "goto")
       {
          line >> i1;

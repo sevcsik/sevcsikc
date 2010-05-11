@@ -309,6 +309,26 @@ class Divide : public Instruction
       void print();
 };
 
+/// Compare one register with another
+class Compare : public Instruction
+{
+   private:
+      unsigned arg1;
+      unsigned arg2;
+      unsigned dest;
+   public:
+      /** @param arg1 register that contains first argument
+        * @param arg2 register that contains first argument
+        * @param dest register to hold the result:
+        * arg1 < arg2: -1
+        * arg1 == arg2: 0
+        * arg1 > arg2: 1
+        */
+      Compare(unsigned arg1, unsigned arg2, unsigned dest);
+      double exec(double *acc);
+      void print();
+};
+
 /// Jump to specified instruction
 class Goto : public Instruction
 {
