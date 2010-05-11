@@ -1,0 +1,45 @@
+// megkeresi ket szam legnagyobb kozos osztojat
+// valtozok:
+//    *0    elso szam
+//    *1    masodik szam
+//    *2    aktualis oszto
+//    *3    legnagyobb oszto
+//    *4    ciklus feltetele
+//    *5    konstans tarolo
+//    *6    osztas eredmenye
+//    *7    kerekites eredmenye
+//    *8    continue feltetel
+
+org      0
+load     6     0           // 00 elso szam
+load     9     1           // 01 masodik szam
+load     1     2           // 02 1-es osztorol indulunk
+load     1     3           // 03 Minimum az 1 a legnagyobb kozos oszto
+
+// while *2 < *0 {
+compare  2     0     4     // 04 )
+load     -1    5           // 05 > Ha *2 < *0, *4 = 0
+compare  4     5     4     // 06 )
+
+load     1     5           // 07 1 konstans betoltese az inkrementalashoz
+add      2     5     2     // 08 inkrementaljuk az osztot
+
+divide   0     2     6     // 09 elosztjuk az elso szamot
+round    6     7           // 10 kerekitjuk
+compare  6     7     8     // 11 egesz szam -e?
+nzgoto   8     20          // 12 ha nem, continue
+
+divide   1     2     6     // 13 elosztjuk az elso szamot
+round    6     7           // 14 kerekitjuk
+compare  6     7     8     // 15 egesz szam -e?
+nzgoto   8     4           // 16 ha nem, continue
+
+print    2     "Kozos oszto: %lf"   // 17 Ha ideaig eljutottunk, akkor kozos
+load     0     5           // 18 0 konstans (kene move utasitas :))
+add      2     5     3     // 19 eltaroljuk legnagyobbkent
+
+zgoto    4     4           // 20 visszaterunk a ciklus elejere, ha a feltetel 0
+// } while vege
+
+print    3     "Legnagyobb kozos oszto: %lf" //21
+end
