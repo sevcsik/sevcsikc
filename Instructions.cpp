@@ -4,6 +4,7 @@
 #include <cstring>
 #include <iostream>
 #include <sstream>
+#include <cmath>
 using namespace std;
 
 InstEx::InstEx(const char *msg, unsigned pos) : msg(msg), pos(pos)
@@ -136,6 +137,20 @@ double Compare::exec(double *acc)
 void Compare::print()
 {
    cout << "Compare *" << arg1 << " *" << arg2 << " to *" << dest << endl;
+}
+
+Round::Round(unsigned arg, unsigned dest) : arg(arg), dest(dest)
+{
+}
+
+double Round::exec(double *acc)
+{
+   acc[dest] = rint(acc[arg]);
+}
+
+void Round::print()
+{
+   cout << "Round *" << arg << "to *" << dest << endl;
 }
 
 Put::Put(unsigned arg, unsigned addr): arg(arg), addr(addr)

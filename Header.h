@@ -329,6 +329,21 @@ class Compare : public Instruction
       void print();
 };
 
+/// Round a register to the nearest integer
+class Round : public Instruction
+{
+   private:
+      unsigned arg;
+      unsigned dest;
+   public:
+      /** @param arg register that contains argument
+        * @param dest register to hold the result
+        */
+      Round(unsigned arg, unsigned dest);
+      double exec(double *acc);
+      void print();
+};
+
 /// Jump to specified instruction
 class Goto : public Instruction
 {
